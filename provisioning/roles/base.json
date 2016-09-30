@@ -18,6 +18,6 @@
         "build-essential": {
             "compile_time": true
         },
-        "packages": ["vim", "git", "htop", "bwm-ng", "zip","imagemagick"]
+        "packages": ["vim", "git", "htop", "bwm-ng", "zip","imagemagick", "python-pip"]
     }
 }
