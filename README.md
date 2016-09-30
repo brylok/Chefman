@@ -13,9 +13,6 @@ An environment built by Chef for working with Middleman 4.
 ### Clone the Middleman project repo you want to work on
 `git clone git@github.com:brylok/GulpMan.git`
 
-### Move back to Chefman folder
-`cd ..`
-
 ### Download and provision vm
 `vagrant up`
 
