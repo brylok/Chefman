@@ -42,16 +42,16 @@ http://localhost:4567
 
 `sudo pip install awscli`
 
-### create aws-cli folder/file
+### Create aws-cli folder/file
 `mkdir ~/.aws`
 
 `touch ~/.aws/config`
 
-### copy in AWS keys
+### Copy in AWS keys
 `vi ~/.aws/config`
 
 
-### protect the key folder
+### Protect the key folder
 
 `chmod 600 ~/.aws/config`
 
