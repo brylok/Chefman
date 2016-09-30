@@ -29,8 +29,8 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'shell' do |s|
     aws_priv_key = File.readlines("#{ENV['HOME']}/.aws/config").first.strip
     s.inline = <<-SHELL
-      echo #{ssh_priv_key} >> /home/vagrant/.aws/config
-      chmod 0600 /home/vagrant/.ssh/id_rsa
+      echo #{aws_priv_key} >> /home/vagrant/.aws/config
+      chmod 0600 /home/vagrant/.aws/config
     SHELL
   end if aws_key_exists?
 
