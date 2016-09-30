@@ -26,6 +26,14 @@ Vagrant.configure('2') do |config|
     SHELL
   end if ssh_key_exists?
 
+  config.vm.provision 'shell' do |s|
+    aws_priv_key = File.readlines("#{ENV['HOME']}/.aws/config").first.strip
+    s.inline = <<-SHELL
+      echo #{ssh_priv_key} >> /home/vagrant/.aws/config
+      chmod 0600 /home/vagrant/.ssh/id_rsa
+    SHELL
+  end if aws_key_exists?
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = 'provisioning/cookbooks'
     chef.roles_path = 'provisioning/roles'
@@ -38,6 +46,7 @@ Vagrant.configure('2') do |config|
     }
     config.ssh.forward_agent = true
     add_ssh_key if ssh_key_exists?
+    add_aws_key if aws_key_exists?
   end
 end
 
@@ -47,4 +56,12 @@ end
 
 def add_ssh_key
   `ssh-add`
+end
+
+def aws_key_exists?(path = "#{ENV['HOME']}/.aws/config")
+  raise "No aws private key found at #{path}" unless File.exist?(path)
+end
+
+def add_aws_key
+  `aws-add`
 end
