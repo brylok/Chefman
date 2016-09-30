@@ -36,15 +36,11 @@ http://localhost:4567
 
 
 ## Deployment
-
 ### Install Aws CLi
-`sudo apt-get install -y python-pip`
-
 `sudo pip install awscli`
 
 ### Create aws-cli folder/file
 `mkdir ~/.aws`
-
 `touch ~/.aws/config`
 
 ### Copy in AWS keys
@@ -52,11 +48,9 @@ http://localhost:4567
 
 
 ### Protect the key folder
-
 `chmod 600 ~/.aws/config`
 
 
 ### Deploy
-
 `rake deploy:production`
 
