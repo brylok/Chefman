@@ -1,0 +1,16 @@
+{
+
+    "name": "app",
+    "description": "app role",
+    "json_class": "Chef::Role",
+    "chef_type": "role",
+    "run_list": [
+        "role[base]",
+        "role[ruby]",
+        "role[nodejs]",
+        "role[cache]"
+    ],
+    "env_run_lists": {},
+    "default_attributes": {},
+    "override_attributes": {}
+}

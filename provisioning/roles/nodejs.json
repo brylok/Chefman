@@ -1,0 +1,15 @@
+
+{
+	"name": "nodejs",
+	"description": "sets up node",
+	"json_class": "Chef::Role",
+	"chef_type": "role",
+	"run_list": [
+    "recipe[nvm]"
+  ],
+	"env_run_lists": {},
+	"default_attributes": {
+  },
+	"override_attributes": {
+}
+}

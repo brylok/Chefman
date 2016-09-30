@@ -1,0 +1,14 @@
+{
+
+    "name": "cache",
+    "description": "cache role",
+    "json_class": "Chef::Role",
+    "chef_type": "role",
+    "run_list": [
+        "recipe[redisio]",
+        "recipe[redisio::enable]"
+    ],
+    "env_run_lists": {},
+    "default_attributes": {},
+    "override_attributes": {}
+}
