@@ -30,5 +30,33 @@ An environment built by Chef for working with Middleman 4.
 ### Start the Middleman app
 `rake preview`
 
-## View running app in your browser
+### View running app in your browser
 http://localhost:4567
+
+
+
+## Deployment
+
+### Install Aws CLi
+`sudo apt-get install -y python-pip`
+
+`sudo pip install awscli`
+
+### create aws-cli folder/file
+`mkdir ~/.aws`
+
+`touch ~/.aws/config`
+
+### copy in AWS keys
+`vi ~/.aws/config`
+
+
+### protect the key folder
+
+`chmod 600 ~/.aws/config`
+
+
+### Deploy
+
+`rake deploy:production`
+
